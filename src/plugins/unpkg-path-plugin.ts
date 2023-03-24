@@ -22,13 +22,6 @@ export const unpkgPathPlugin = () => {
             namespace: 'a',
             path: `https://unpkg.com/${args.path}`
         };
-
-        // else if(args.path === 'tiny-test-pkg') {
-        //     return {
-        //         namespace: 'a',
-        //         path: 'https://unpkg.com/tiny-test-pkg@1.0.0/index.js'
-        //     };
-        // }
       });
  
       build.onLoad({ filter: /.*/ }, async (args: any) => {
@@ -38,8 +31,8 @@ export const unpkgPathPlugin = () => {
           return {
             loader: 'jsx',
             contents: `
-              const message = require('nested-test-pkg');
-              console.log(message);
+              import React, { useState } from 'react';
+              console.log(React, useState);
             `,
           };
         }
