@@ -27,9 +27,9 @@ const reducer = produce((state: BundlesState = initialState, action: Action): Bu
                 code: action.payload.bundle.code,
                 err: action.payload.bundle.err
             };
-        return state;
-            default:
-                return state;
+            return state;
+        default:
+            return state;
         }
     }, initialState);
 
