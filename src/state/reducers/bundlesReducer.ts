@@ -1,4 +1,4 @@
-import produce from "immer";
+import produce from 'immer';
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
 
@@ -20,7 +20,7 @@ const reducer = produce((state: BundlesState = initialState, action: Action): Bu
                 code: '',
                 err: ''
                 };
-        return state;
+            return state;
         case ActionType.BUNDLE_COMPLETE:
             state[action.payload.cellId] = {
                 loading: false,

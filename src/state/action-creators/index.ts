@@ -27,16 +27,16 @@ export const moveCell = (id: string, direction: Direction): MoveCellAction => {
         payload: {
             id,
             direction
-        }
+        },
     };
 };
 
-export const insertCellAfter = (id: string | null, type: CellTypes): InsertCellAfterAction => {
+export const insertCellAfter = (id: string | null, cellType: CellTypes): InsertCellAfterAction => {
     return {
         type: ActionType.INSERT_CELL_AFTER,
         payload: {
             id,
-            type
+            type: cellType,
         }
     };
 };
@@ -56,10 +56,7 @@ export const createBundle = (cellId: string, input: string) => {
             type: ActionType.BUNDLE_COMPLETE,
             payload: {
                 cellId,
-                bundle: {
-                    code: result.code,
-                    err: result.err
-                }
+                bundle: result,
             }
         });
     };

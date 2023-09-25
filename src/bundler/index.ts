@@ -25,7 +25,9 @@ const bundle = async (rawCode: string) => {
             define: {
                 'process.env.NODE_ENV': '"production"',
                 global: 'window'
-            }
+            },
+            jsxFactory: '_React.createElement',
+            jsxFragment: '_React.Fragment'
         })
 
         return {
@@ -35,7 +37,7 @@ const bundle = async (rawCode: string) => {
 
     } catch (err) {
         if (err instanceof Error) {
-            console.log("is instandce of error");
+            console.log("is instance of error");
           return {
             code: "",
             err: err.message,
